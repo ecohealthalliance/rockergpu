@@ -1,14 +1,16 @@
-
-version: '3.1'
+version: '2.3'
 
 services:
   rstudio:
     image: "ecohealthalliance/rockergpu"
     environment:
-      -  DISABLE_AUTH=true
+#      -  DISABLE_AUTH=true
+      -  PASSWORD=prospero
+      -  ROOT=true
     ports:
-      - "22022:22"
+#      - "22022:22"
       - "8787:8787"
-    volumes:
-      - ".:/home/rstudio"
+#    volumes:
+#      - ".:/home/rstudio"
     hostname: rockergpu
+    runtime: nvidia
